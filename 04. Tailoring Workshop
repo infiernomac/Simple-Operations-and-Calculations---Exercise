@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tailoring_Workshop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double rectangularTables = double.Parse(Console.ReadLine());
+            double length = double.Parse(Console.ReadLine());
+            double width = double.Parse(Console.ReadLine());
+
+            double cover = 7;
+            double kare = 9;
+            double usd = 1.85;
+            double coverUpSide = 0.3;
+
+            double allCover = rectangularTables * (length + 2 * coverUpSide) * (width + 2 * coverUpSide);
+            
+            double allKare = rectangularTables * (length / 2) * (length / 2);
+            
+            double price = allCover * cover + allKare * kare;
+
+            Console.WriteLine($"{price:f2} USD");
+            Console.WriteLine($"{price * usd:f2} BGN");
+ 
+        }
+    }
+}
