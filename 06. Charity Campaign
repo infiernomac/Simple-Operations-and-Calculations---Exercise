@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Charity_Campaign
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double campaningDay = double.Parse(Console.ReadLine());
+            double pastryCook = double.Parse(Console.ReadLine());
+            double cakes = double.Parse(Console.ReadLine());
+            double waffles = double.Parse(Console.ReadLine());
+            double pancakes = double.Parse(Console.ReadLine());
+
+            double cakePrice = 45;
+            double wafflePrice = 5.8;
+            double pancakePrice = 3.2;
+
+            double cakeCost = cakes * cakePrice;
+            double waffleCost = waffles * wafflePrice;
+            double pancakeCost = pancakes * pancakePrice;
+            double priceForOneDay = (cakeCost + waffleCost + pancakeCost) * pastryCook;
+            double allMoney = priceForOneDay * campaningDay;
+
+            Console.WriteLine($"{allMoney - (allMoney / 8):f2}");
+
+
+        }
+    }
+}
