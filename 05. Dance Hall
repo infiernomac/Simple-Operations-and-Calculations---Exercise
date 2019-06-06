@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Dance_Hall
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double hallLenght = double.Parse(Console.ReadLine());
+            double hallWidth = double.Parse(Console.ReadLine());
+            double wardrobeSide = double.Parse(Console.ReadLine());
+
+            double dancerArea = 40;
+            double dancerFreeMove = 7000;
+
+            double hallSize = (hallLenght * 100) * (hallWidth * 100);
+            double wardrobeArea = Math.Pow(wardrobeSide * 100, 2);
+            double benchArea = hallSize / 10;
+            double freeSpace = hallSize - wardrobeArea - benchArea;
+
+            Console.WriteLine($"{Math.Floor(freeSpace / (dancerArea + dancerFreeMove))}");
+        }
+    }
+}
